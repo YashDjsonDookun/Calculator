@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.5.js"></script>
+	<script>
+		function calculate() {
+							var x = parseInt(document.getElementById('num1').value);
+							var y = parseInt(document.getElementById('num2').value);
+							var z = document.getElementById('operand').value;
+							var message = document.getElementById('answer');
+							var message1 = document.getElementById('operation');
+							var l;
+							if(z == '+'){
+								l = x + y;
+							}
+							if(z == '-'){
+								l = x - y;
+							}
+							if(z == '÷'){
+								l = x / y;
+							}
+							if(z == '*'){
+								l = x * y;
+							}
+							message.innerHTML = l;
+							message1.innerHTML = x + z + y
+						}
+	</script>
+	<script src="cordova.js"></script>
+</head>
+<body>
+	<div data-role="page" id="home" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#calculator" data-icon="grid">Calculator</a></li>
+					<li><a href="#helpsc" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<p>This is a jQuery mobile exercise which provides the user with a calculator for basic mathematical operations.</p>
+		</div>
+		<div data-role="footer">
+			<h1>Homework</h1>
+		</div>
+	</div>
+	<div data-role="page" id="calculator" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#calculator" data-icon="grid">Calculator</a></li>
+					<li><a href="#helpsc" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+		</div>
+		<form method="post">
+			<fieldset class="ui-field-contain">
+				<input type="text" name="num1" id="num1">
+				<select name="operand" id="operand">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+				<input type="text" name="num2" id="num2">
+			</fieldset>
+		</form>
+		<div>
+			<a href="#result" onclick="calculate()" class="ui-btn">Calculate</a>
+		</div>
+		<div data-role="footer">
+			<h1>Homework</h1>
+		</div>
+	</div>
+	<div data-role="page" id="result" data-theme="a">
+		<div data-role="header">
+			<h1>Results</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#calculator" data-icon="grid">Calculator</a></li>
+					<li><a href="#helpsc" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<p>Operation:</p>
+			<label id="operation"></label>
+			<p>Result:</p>
+			<label id="answer"></label>
+			<a href="#calculator" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+		</div>
+		<div data-role="footer">
+			<h1>Homework</h1>
+		</div>
+	</div>
+	<div data-role="page" id="helpsc" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#calculator" data-icon="grid">Calculator</a></li>
+					<li><a href="#helpsc" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<p>This is the help section and provides basic information about how to use the calculator.</p>
+			<a href="#helpop" class="ui-btn ui-icon-info ui-btn-icon-left">More Info</a>
+		</div>
+		<div data-role="footer">
+			<h1>Homework</h1>
+		</div>
+	</div>
+	<div data-role="page" id="helpop" data-dialog="true" data-theme="a">
+		<div data-role="header">
+			<h1>More Inf<o/h1>
+		</div>
+		<div>
+			<p>You have requested more information about the App!</p>
+			<a href="#helpsc" class="ui-btn ui-icon-back ui-btn-icon-left">Dismiss</a>
+		</div>	
+	</div>
+</body>
+</html>
